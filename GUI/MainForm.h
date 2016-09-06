@@ -612,6 +612,8 @@ namespace GUI
 			this->panel26 = (gcnew System::Windows::Forms::Panel());
 			this->webBrowser4 = (gcnew System::Windows::Forms::WebBrowser());
 			this->panel27 = (gcnew System::Windows::Forms::Panel());
+			this->btnStartProcessByName = (gcnew System::Windows::Forms::Button());
+			this->txtProcessName = (gcnew System::Windows::Forms::TextBox());
 			this->btnKillProcess = (gcnew System::Windows::Forms::Button());
 			this->numProcessId = (gcnew System::Windows::Forms::NumericUpDown());
 			this->btnProcesses = (gcnew System::Windows::Forms::Button());
@@ -645,8 +647,6 @@ namespace GUI
 			this->fontDialog1 = (gcnew System::Windows::Forms::FontDialog());
 			this->folderBrowserDialog1 = (gcnew System::Windows::Forms::FolderBrowserDialog());
 			this->checkHeartbeatDatabaseStatus = (gcnew System::Windows::Forms::Timer(this->components));
-			this->txtProcessName = (gcnew System::Windows::Forms::TextBox());
-			this->btnStartProcessByName = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->contextMenuStrip1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -2888,6 +2888,23 @@ namespace GUI
 			this->panel27->Size = System::Drawing::Size(422, 286);
 			this->panel27->TabIndex = 5;
 			// 
+			// btnStartProcessByName
+			// 
+			this->btnStartProcessByName->Location = System::Drawing::Point(3, 180);
+			this->btnStartProcessByName->Name = L"btnStartProcessByName";
+			this->btnStartProcessByName->Size = System::Drawing::Size(142, 23);
+			this->btnStartProcessByName->TabIndex = 8;
+			this->btnStartProcessByName->Text = L"Start Process";
+			this->btnStartProcessByName->UseVisualStyleBackColor = true;
+			this->btnStartProcessByName->Click += gcnew System::EventHandler(this, &MainForm::btnStartProcessByName_Click);
+			// 
+			// txtProcessName
+			// 
+			this->txtProcessName->Location = System::Drawing::Point(151, 183);
+			this->txtProcessName->Name = L"txtProcessName";
+			this->txtProcessName->Size = System::Drawing::Size(125, 20);
+			this->txtProcessName->TabIndex = 7;
+			// 
 			// btnKillProcess
 			// 
 			this->btnKillProcess->Location = System::Drawing::Point(3, 151);
@@ -3117,23 +3134,6 @@ namespace GUI
 			this->checkHeartbeatDatabaseStatus->Interval = 500;
 			this->checkHeartbeatDatabaseStatus->Tick += gcnew System::EventHandler(this, &MainForm::checkHeartbeatDatabaseStatus_Tick);
 			// 
-			// txtProcessName
-			// 
-			this->txtProcessName->Location = System::Drawing::Point(151, 183);
-			this->txtProcessName->Name = L"txtProcessName";
-			this->txtProcessName->Size = System::Drawing::Size(125, 20);
-			this->txtProcessName->TabIndex = 7;
-			// 
-			// btnStartProcessByName
-			// 
-			this->btnStartProcessByName->Location = System::Drawing::Point(3, 180);
-			this->btnStartProcessByName->Name = L"btnStartProcessByName";
-			this->btnStartProcessByName->Size = System::Drawing::Size(142, 23);
-			this->btnStartProcessByName->TabIndex = 8;
-			this->btnStartProcessByName->Text = L"Start Process";
-			this->btnStartProcessByName->UseVisualStyleBackColor = true;
-			this->btnStartProcessByName->Click += gcnew System::EventHandler(this, &MainForm::btnStartProcessByName_Click);
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -3143,7 +3143,7 @@ namespace GUI
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MainForm";
-			this->Text = L"MainForm";
+			this->Text = L"Dings";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MainForm::MainForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
